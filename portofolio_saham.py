@@ -12,15 +12,15 @@ LEMBAR_PER_LOT = 100          # 1 lot saham di BEI = 100 lembar
 FILE_DATA = "portofolio.json"
 
 
-def rupiah(angka):
+def rupiah(angka, dengan_tanda=False):
     """Ubah angka jadi format rupiah: 1500000 -> +Rp1.500.000"""
     teks = f"{abs(angka):,.0f}".replace(",", ".")
     if angka < 0:
         return f"-Rp{teks}"
-    elif angka == 0:
-        return f"Rp{teks}"
-    else:
+    elif angka > 0 and dengan_tanda:
         return f"+Rp{teks}"
+    else:
+        return f"Rp{teks}"
 
 
 # ===== CLASS 1: Saham -> mewakili SATU saham yang kamu pegang =====
@@ -69,7 +69,7 @@ class Saham:
         tanda = "+" if self.untung_rugi() >= 0 else ""
         return (f"{self.kode:<6} {self.lot:>4} lot | beli {rupiah(self.harga_beli):>10} "
                 f"| kini {rupiah(self.harga_sekarang):>10} "
-                f"| P/L {rupiah(self.untung_rugi()):>12} ({tanda}{self.persen():.2f}%)")
+                f"| P/L {rupiah(self.untung_rugi(), dengan_tanda=True):>12} ({tanda}{self.persen():.2f}%)")
 
 
 # ===== CLASS 2: Portofolio -> kumpulan banyak Saham =====
@@ -126,7 +126,7 @@ class Portofolio:
         persen = pl / modal * 100 if modal else 0
         print(f"Total modal : {rupiah(modal)}")
         print(f"Nilai kini  : {rupiah(nilai)}")
-        print(f"Untung/Rugi : {rupiah(pl)} ({persen:.2f}%)")
+        print(f"Untung/Rugi : {rupiah(pl, dengan_tanda=True)} ({persen:.2f}%)")
 
     def simpan(self):
         with open(FILE_DATA, "w") as f:
