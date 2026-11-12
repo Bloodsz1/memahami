@@ -1,0 +1,20 @@
+[
+  {
+    "kode": "TLKM",
+    "lot": 3,
+    "harga_beli": 4000.0,
+    "harga_sekarang": 4000.0
+  },
+  {
+    "kode": "BUMI",
+    "lot": 30,
+    "harga_beli": 163.0,
+    "harga_sekarang": 400.0
+  },
+  {
+    "kode": "ASII",
+    "lot": 2,
+    "harga_beli": 3000.0,
+    "harga_sekarang": 3000.0
+  }
+]
