@@ -16,5 +16,11 @@
     "lot": 2,
     "harga_beli": 3000.0,
     "harga_sekarang": 6000.0
+  },
+  {
+    "kode": "ANTM",
+    "lot": 23,
+    "harga_beli": 200.0,
+    "harga_sekarang": 200.0
   }
 ]

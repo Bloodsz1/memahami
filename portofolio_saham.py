@@ -51,6 +51,9 @@ class Saham:
             return 0
         return self.untung_rugi() / self.modal() * 100
 
+    def sedang_untung(self):
+        return self.untung_rugi() > 0
+
     def to_dict(self):
         """Ubah objek jadi dictionary supaya bisa disimpan ke JSON."""
         return {
