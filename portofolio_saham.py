@@ -116,6 +116,13 @@ class Portofolio:
     def total_nilai(self):
         return sum(s.nilai_sekarang() for s in self.daftar.values())
 
+    def saham_untung(self):
+        hasil = []
+        for saham in self.daftar.values():
+            if saham.sedang_untung():
+                hasil.append(saham)
+        return hasil
+
     def tampilkan(self):
         if not self.daftar:
             print("\nPortofolio masih kosong.")
