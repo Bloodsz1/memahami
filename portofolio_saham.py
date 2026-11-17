@@ -176,6 +176,7 @@ def main():
         print("2. Jual saham")
         print("3. Update harga saham")
         print("4. Lihat portofolio")
+        print("5. Lihat saham yang sedang untung")
         print("0. Keluar")
         pilihan = input("Pilih menu: ").strip()
 
@@ -198,6 +199,12 @@ def main():
                 print("Harga diperbarui.")
             elif pilihan == "4":
                 portofolio.tampilkan()
+            elif pilihan == "5":
+                untung = portofolio.saham_untung()  
+                if not untung:                       
+                    print("Belum ada saham yang untung.")
+                for saham in untung:
+                    print(saham)
             elif pilihan == "0":
                 print("Data tersimpan. Sampai jumpa!")
                 break
