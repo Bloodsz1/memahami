@@ -151,6 +151,12 @@ class Portofolio:
         except FileNotFoundError:
             pass   # pertama kali jalan, file belum ada -> tidak apa-apa
 
+    def saham_terbaik(self):
+        terbaik = None
+        for saham in self.daftar.values():
+            if terbaik is None or saham.persen() > terbaik.persen():
+                terbaik = saham
+        return terbaik
 
 # ===== Program utama: menu interaktif =====
 def baca_angka(pesan):
@@ -177,6 +183,7 @@ def main():
         print("3. Update harga saham")
         print("4. Lihat portofolio")
         print("5. Lihat saham yang sedang untung")
+        print("6. Lihat saham terbaik")
         print("0. Keluar")
         pilihan = input("Pilih menu: ").strip()
 
@@ -205,6 +212,13 @@ def main():
                     print("Belum ada saham yang untung.")
                 for saham in untung:
                     print(saham)
+            elif pilihan == "6":
+                terbaik = portofolio.saham_terbaik()
+                if terbaik:
+                    print("Saham terbaik saat ini:")
+                    print(terbaik)
+                else:
+                    print("Portofolio kosong.")
             elif pilihan == "0":
                 print("Data tersimpan. Sampai jumpa!")
                 break
