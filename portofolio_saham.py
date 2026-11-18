@@ -152,6 +152,7 @@ class Portofolio:
             pass   # pertama kali jalan, file belum ada -> tidak apa-apa
 
     def saham_terbaik(self):
+        """Cari saham dengan persentase untung terbesar."""
         terbaik = None
         for saham in self.daftar.values():
             if terbaik is None or saham.persen() > terbaik.persen():
