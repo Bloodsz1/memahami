@@ -159,6 +159,23 @@ class Portofolio:
                 terbaik = saham
         return terbaik
 
+def statistik(self):
+    jumlah_saham = len(self.daftar)
+
+    total_lot = sum(
+        saham.lot for saham in self.daftar.values()
+    )
+
+    print("\n--- STATISTIK PORTOFOLIO ---")
+    print(f"Jumlah jenis saham : {jumlah_saham}")
+    print(f"Total seluruh lot  : {total_lot}")
+
+    terbaik = self.saham_terbaik()
+
+    if terbaik:
+        print(f"Saham terbaik      : {terbaik.kode}")
+    else:
+        print("Portofolio masih kosong.")
 # ===== Program utama: menu interaktif =====
 def baca_angka(pesan):
     """Minta input angka. Ulangi terus sampai user mengisi dengan benar."""
