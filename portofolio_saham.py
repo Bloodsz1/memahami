@@ -202,6 +202,7 @@ def main():
         print("4. Lihat portofolio")
         print("5. Lihat saham yang sedang untung")
         print("6. Lihat saham terbaik")
+        print("7. Lihat statistik portofolio")
         print("0. Keluar")
         pilihan = input("Pilih menu: ").strip()
 
@@ -237,6 +238,8 @@ def main():
                     print(terbaik)
                 else:
                     print("Portofolio kosong.")
+            elif pilihan == "7":
+                    portofolio.statistik()
             elif pilihan == "0":
                 print("Data tersimpan. Sampai jumpa!")
                 break
