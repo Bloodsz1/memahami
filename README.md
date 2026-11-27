@@ -1,6 +1,7 @@
 # Pelacak Portofolio Saham
 
 (Program sederhana untuk evaluasi kinerja investasi saham)
+(Prigram ini saya buat, karena saya masih pemula maka mungkin kodenya tidak sempurna)
 
 ## Fitur
 - Beli saham
@@ -26,3 +27,5 @@ python portofolio_saham.py
 1. OOP mulai dari class, @property, classmethod
 2. json
 3. dictionary
+4. Looping
+5. if statement
